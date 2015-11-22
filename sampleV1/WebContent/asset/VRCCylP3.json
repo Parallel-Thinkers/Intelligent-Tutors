@@ -1,0 +1,31 @@
+{"nodes" : [
+{"name": "CoveringProblem"},
+{"name": " Has_Container_Whose_Capacity_To_Be_Found "},
+{"name": " Has_Dimension_Of_The_Container "},
+{"name": " Has_Volume_Of_The_Container "},
+{"name": " CylindricalVessel"},
+{"name": " Height_CylindricalVessel_Cm"},
+{"name": " BaseCircumference_CylindricalVessel_Cm"},
+{"name": " BaseRadiusOfCylindricalVessel_Cm"},
+{"name": " Volume_Of_Cylindrical_Vessel_CuCm"},
+{"name": " RightCircularCylinder"},
+{"name": " Height"},
+{"name": " Circumference"},
+{"name": " Radius"},
+{"name": " Volume_Of_Right_Circular_Cylinder"}
+],
+"edges": [
+{"source": 0, "target": 1, "val": "Schematic is" },
+{"source": 0, "target": 2, "val": "Schematic is" },
+{"source": 0, "target": 3, "val": "Schematic is" },
+{"source": 1, "target": 4, "val": "Semantic is" },
+{"source": 2, "target": 5, "val": "Semantic is" },
+{"source": 2, "target": 6, "val": "Semantic is" },
+{"source": 2, "target": 7, "val": "Semantic is" },
+{"source": 3, "target": 8, "val": "Semantic is" },
+{"source": 4, "target": 9, "val": "Linguistic is" },
+{"source": 5, "target": 10, "val": "Linguistic is" },
+{"source": 6, "target": 11, "val": "Linguistic is" },
+{"source": 7, "target": 12, "val": "Linguistic is" },
+{"source": 8, "target": 13, "val": "Linguistic is" }
+]}

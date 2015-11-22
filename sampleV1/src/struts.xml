@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" />
+            <package name="default" extends="struts-default" namespace="/">
+            <action name="graph"  class="Graph.Graph" >
+            <result name="success">test.jsp</result>
+        </action>
+        </package>
+    <package name="logic" extends="struts-default" namespace="/">
+    
+    
+        <action name="loginActionStudent"
+            class="logic.Login" method="login">
+            <result name="success" type="redirectAction">
+            <param name="actionName">loadProblemTypes.action</param>
+            </result>
+            <result name="failed">index.jsp</result>
+        </action>
+        
+        <action name="loadProblemTypes"
+            class="logic.ProblemTypes" method="loadProblemTypes">
+            <result name="success">ProblemTypes.jsp</result>
+        </action>
+        
+        <action name="logout"
+            class="logic.Login" method="logout">
+            <result name="success">index.jsp</result>
+        </action>
+        
+        <action name="ProblemTypeSelectAction"
+            class="logic.ProblemTypes" method="selectedType">
+            <result name="success" type="redirectAction">
+            <param name="actionName">chooseMode.action</param>
+            </result>
+        </action>
+        
+		<action name="chooseMode"
+            class="logic.ChooseMode" method="loadSelectedProblem">
+            <result name="success">choosemode.jsp</result>
+        </action>
+        
+        <action name="learningAction"
+            class="logic.ChooseMode" method="loadLearningMode">
+           
+            <result name="success" type="redirectAction">
+            <param name="actionName">loadQuestions.action</param>
+            </result>
+        </action>
+        
+        <action name="loadQuestions"
+            class="logic.LearningMode" method="loadAll">
+            <result name="success">learningMode.jsp</result>
+             <result name="nextp" type="redirectAction">
+            <param name="actionName">solvingAction.action</param>
+            </result>
+            
+        </action>
+
+        <action name="solvingAction"
+            class="logic.ChooseMode" method="loadSolvingMode">
+            <result name="success" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="loadSolvingProblem"
+            class="logic.SolvingMode" method="loadCurrentProblem">
+            <result name="success">solvingMode.jsp</result>
+        </action>
+        
+         <action name="schematic" class="logic.SolvingMode" method="loadschematic">
+        <result name="formulasuccess" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="stuck" class="logic.SolvingMode" method="predictBugs">
+        <result name="success" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="details" class="logic.SolvingMode" method="loaddetails">
+        <result name="formulasuccess" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="formula" class="logic.SolvingMode" method="fetchFormulae">
+        <result name="formulasuccess" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="givenSubmit" class="logic.SolvingMode" method="givenValidation">
+        <result name="success" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="tofindSubmit" class="logic.SolvingMode" method="tofindValidation">
+        <result name="success" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+        
+        <action name="solutionSubmit" class="logic.SolvingMode" method="solutionValidation">
+       <result name="success" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        <result name="ProblemComplete" type="redirectAction">
+            <param name="actionName">loadSolvingProblem.action</param>
+            </result>
+        </action>
+
+        <action name="selectAnswer"
+            class="logic.LearningMode" method="checkAnswer">
+            <result name="nextp" type="redirectAction">
+            <param name="actionName">solvingAction.action</param>
+            </result>
+            <result name="nextq">learningMode.jsp</result>
+            <result name="wrong">learningMode.jsp</result>
+        </action>
+        
+        <action name="startques" class="logic.LearningMode" method="resetques">
+        <result name="success">learningMode.jsp</result>
+        </action>
+        
+        <action name="missconcept" class="logic.LearningProfile" method="loadmissingconcepts">
+          <result name="success">misconcept.jsp</result>
+        </action>
+        
+        
+          <action name="missconception" class="logic.LearningProfile" method="loadmissconcept">
+          <result name="success">missingconcept.jsp</result>
+        </action>
+ 
+         <action name="covering" class="logic.LearningProfile" method="loadCoveringProblemTasks">
+          <result name="success">covering.jsp</result>
+        </action>
+        
+         <action name="progress" class="logic.LearningProfile" method="loadProgress">
+          <result name="success">progress.jsp</result>
+        </action>
+        
+          <action name="mensuration" class="logic.LearningProfile" method="loadMensurationdomain">
+          <result name="success">mensuration.jsp</result>
+        </action>
+        
+           <action name="activity" class="logic.LearningProfile" method="loadActivity">
+          <result name="success">activity.jsp</result>
+        </action>
+
+
+<!-- Added By Rahul and shan (12/05/2015) -->
+    
+          <action name="smissconception" class="logic.LearningProfile" method="loadmissconcept">
+          <result name="success">smissingconcept.jsp</result>
+        </action>
+ 
+         <action name="scovering" class="logic.LearningProfile" method="loadCoveringProblemTasks">
+          <result name="success">scovering.jsp</result>
+        </action>
+        
+         <action name="sprogress" class="logic.LearningProfile" method="loadProgress">
+          <result name="success">sprogress.jsp</result>
+        </action>
+
+        <action name="smissconcept" class="logic.LearningProfile" method="loadmissingconcepts">
+          <result name="success">smisconcept.jsp</result>
+        </action>
+        
+          <action name="smensuration" class="logic.LearningProfile" method="loadMensurationdomain">
+          <result name="success">smensuration.jsp</result>
+        </action>
+
+           <action name="sactivity" class="logic.LearningProfile" method="loadActivity">
+          <result name="success">sactivity.jsp</result>
+        </action>
+
+<!-- Added By Rahul and shan (22/04/2015) (signUp action)-->
+    
+		<action name="signUp" class="logic.SignUpAction" method="execute">
+				<result name="success">index.jsp</result>		
+		</action>
+
+        <action name="logincheck"
+            class="logic.loginCheckAction" method="studentvalidate">
+            <result name="success" type="redirectAction">
+            <param name="actionName">loadProblemTypes.action</param>
+            </result>
+            <result name="failed">index.jsp</result>
+        </action>
+
+        <action name="loginteacher"
+            class="logic.loginCheckAction" method="teachervalidate">
+            <result name="success">teacher.jsp</result>
+        </action>
+
+        <action name="teacherhome"
+            class="logic.teacherHomeAction" method="execute">
+            <result name="success">teacher.jsp</result>
+        </action>
+
+        <action name="forgotpassword"
+            class="logic.ForgotPasswordActionc" method="execute">
+            <result name="success">index.jsp</result>
+        </action>
+
+
+<!-- Added By Rahul and shan (22/04/2015) (teacher role (addindividual/uploadclass/studentprofile))-->
+
+        <action name="addindividual"
+            class="logic.loginCheckAction" method="pass">
+            <result name="success">teacher.jsp</result>
+        </action>
+
+
+		<action name="fileupload" class="logic.fileuploadaction" method="execute">
+            <result name="success">teacher.jsp</result>
+		</action>
+
+		<action name="studentprofile" class="logic.loginCheckAction" method="pass1">
+            <result name="success">studentprofile.jsp</result>
+		</action>
+        <action name="selectstudent" class="logic.select" method="execute">
+            <result name="success">teacherprogress.jsp</result>
+		</action>
+		
+		</package>
+		
+		
+
+    
+</struts>

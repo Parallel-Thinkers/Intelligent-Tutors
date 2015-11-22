@@ -1,0 +1,34 @@
+Cm	M	M*100
+
+M	Cm	Cm/100
+
+SqCm	SqM	SqM*10000
+
+SqM	SqCm	SqCm/10000
+
+CuCm	CuM	CuM*1000000
+
+CuM	CuCm	CuCm/1000000
+
+Liter	CuCm	CuCm*1000
+
+CuCm	Liter	Liter/1000
+
+Liter	CuM	CuM/1000
+
+CuM	Liter	Liter*1000
+
+Cm	Centimeter	Centimeter*1
+Centimeter	Cm	Cm*1
+M	Meter	Meter*1
+Meter	M	M*1
+SqCm	Sq.Centimeter	Sq.Centimeter*1
+Sq.Centimeter	SqCm	SqCm*1
+SqM	Sq.Meter	Sq.Meter*1
+Sq.Meter	SqM	SqM*1
+CuM	Cu.Meter	Cu.Meter*1
+Cu.Meter	CuM	CuM*1
+CuCm	Cu.Centimeter	Cu.Centimeter*1
+Cu.Centimeter	CuCm	CuCm*1
+Rupees	Rs	Rs*1	
+Rs	Rupees	Rupees*1

@@ -1,0 +1,3 @@
+square	side	10
+square	perimeter	40
+square	sides	4

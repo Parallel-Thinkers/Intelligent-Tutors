@@ -1,0 +1,21 @@
+Installation steps 
+
+1 Extract the zip IntelligentMathsTutor into some folder
+2 Download and install mysql.
+3 Create a database named tutorDB in mysql(you can give any database name,in that case configuration file has to be changed)
+4 Extract Loader.zip in some folder
+5 Open the sdb.ttl inside ttl folder.
+6 Change the sdb:jdbcURL, sdb:sdbUser ,sdb:sdbPassword as per your mysql setup
+7 From command prompt change to directory Loader.
+8 Run the command java -jar SDBLoader.jar(this will take arount 20 min on slow system 2-4gb ram)(PLease make sure no CLASSPATH set)
+9 After it is completed go to the folder where IntelligentMathsTutor is extracted.
+10 Copy the owl  and ttl folder to /tmp
+11 Chnge sdb.ttl inside ttl folder as per your mysql installation.
+12 If running server through eclipse
+    Extract IntelligentMathsTutor.zip into some folder.
+    Import it as project into eclipse(preferable Juno with J2EE plugin installed).
+    Run in in Tomcat server
+    Check the url localhost:8080/IntelligentMathsTutor/
+13 If directly deploying war then
+    Copy the .war file into the webapps folder of the server.
+    Check the url localhost:8080/IntelligentMathsTutor/ 	 
